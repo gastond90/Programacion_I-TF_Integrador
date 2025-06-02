@@ -17,8 +17,7 @@ class Boxeador {
     protected int puntos;
     
     // Constructor
-    public Boxeador(String nombre, double peso, double altura, int experiencia,
-                   int fuerza, int velocidad, int resistencia) {
+    public Boxeador(String nombre, double peso, double altura, int experiencia, int fuerza, int velocidad, int resistencia) {
         this.nombre = nombre;
         this.peso = peso;
         this.altura = altura;
@@ -31,7 +30,7 @@ class Boxeador {
         this.puntos = 0;
     }
     
-    // calcular el daño de cada ataque
+    //Calcular el daño de cada ataque
     public int calcularDano() {
         Random rand = new Random();
         int danoBase = (fuerza + experiencia) / 2;
@@ -39,7 +38,7 @@ class Boxeador {
         return Math.max(1, danoBase + variacion);
     }
     
-    //calcular la defensa
+    //Calcular la defensa
     public int calcularDefensa() {
         Random rand = new Random();
         int defensaBase = (velocidad + resistencia) / 3;
@@ -47,7 +46,7 @@ class Boxeador {
         return defensaBase + variacion;
     }
     
-    // calcular daño recibido
+    //Calcular daño recibido
     public void recibirDano(int dano) {
         int defensa = calcularDefensa();
         int danoReal = Math.max(1, dano - defensa);
@@ -55,19 +54,19 @@ class Boxeador {
         if (this.vida < 0) this.vida = 0;
     }
     
-    // puntos del round
+    //Puntaje del round
     public void ganarPuntos(int puntos) {
         this.puntos += puntos;
     }
     
-    // Getters y Setters
+    // Getters y setters
     public String getNombre() { return nombre; }
     public int getVida() { return vida; }
     public int getVidaMaxima() { return vidaMaxima; }
     public int getPuntos() { return puntos; }
     public double getPeso() { return peso; }
     
-    // mostrar información del boxeador
+    //Información del boxeador
     public void mostrarInfo() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Peso: " + peso + " kg");
@@ -77,13 +76,13 @@ class Boxeador {
         System.out.println("Vida: " + vida + "/" + vidaMaxima);
     }
     
-    // verificar si está noqueado
+    //Verificar si está KO
     public boolean estaNoqueado() {
         return vida <= 0;
     }
 }
 
-// Clases que heredan de Boxeador según los atributos
+// Clases que heredan de Boxeador
 
 class BoxeadorPesoPesado extends Boxeador {
     public BoxeadorPesoPesado(String nombre, double peso, double altura, int anosEntrenamiento,
@@ -111,6 +110,7 @@ class BoxeadorPesoPluma extends Boxeador {
     public BoxeadorPesoPluma(String nombre, double peso, double altura, int anosEntrenamiento,
                             int fuerza, int velocidad, int resistencia) {
         super(nombre, peso, altura, anosEntrenamiento, fuerza, velocidad, resistencia);
+        
         // Bonificaciones para peso pluma
         this.fuerza -= 2; 
         this.velocidad += 5; 
@@ -166,7 +166,7 @@ public class SimuladorBoxeo {
         scanner.close();
     }
     
-    //pantalla de bienvenida
+    //Pantalla de bienvenida
     public static void mostrarBienvenida() {
         System.out.println("=====================================================");
         System.out.println("           SIMULADOR DE BOXEO           ");
@@ -179,7 +179,7 @@ public class SimuladorBoxeo {
         System.out.println();
     }
     
-    // resumen del proyecto
+    //Resumen del proyecto
     public static void mostrarDescripcionProyecto() {
         System.out.println("RESUMEN DEL PROYECTO:");
         System.out.println("Este simulador permite crear boxeadores con diferentes atributos y simular combates");
@@ -200,18 +200,18 @@ public class SimuladorBoxeo {
         System.out.print("Seleccione una opcion (1-3): ");
     }
     
-    // simulador
+    //Simulador
     public static void simularPelea() {
         System.out.println("NUEVA PELEA");
         System.out.println(SEPARADOR);
         
-        // Creo el primer boxeador
+        //Crear el primer boxeador
         System.out.println("                    ");
         System.out.println("--- DATOS DEL PRIMER BOXEADOR ---");
         System.out.println("                    ");
         Boxeador boxeador1 = crearBoxeador();
         
-        // Creo el segundo boxeador
+        // Crear el segundo boxeador
         System.out.println("                    ");
         System.out.println("--- DATOS DEL SEGUNDO BOXEADOR ---");
         System.out.println("                    ");
@@ -264,20 +264,21 @@ public class SimuladorBoxeo {
         
         scanner.nextLine();
 
+        //Calculo la categoría de del boxeador creado
         if (peso > 90) {
-        System.out.println("\nBoxeador clasificado como PESO PESADO");
+        System.out.println("\nBoxeador clase PESO PESADO");
         return new BoxeadorPesoPesado(nombre, peso, altura, anos, fuerza, velocidad, resistencia);
         } else if (peso < 60) {
-            System.out.println("\nBoxeador clasificado como PESO PLUMA");
+            System.out.println("\nBoxeador clase PESO PLUMA");
             return new BoxeadorPesoPluma(nombre, peso, altura, anos, fuerza, velocidad, resistencia);
         } else {
-            System.out.println("\nBoxeador clasificado como PESO MEDIO");
+            System.out.println("\nBoxeador clase PESO MEDIO");
             return new Boxeador(nombre, peso, altura, anos, fuerza, velocidad, resistencia);
         }
        
     }
     
-    // validar entradas
+    //Validación de inputs
     public static int validarRango(int min, int max) {
         int valor;
         do {
@@ -289,12 +290,12 @@ public class SimuladorBoxeo {
         return valor;
     }
     
-    // simular la pelea
+    //Ejecutar la pelea
     static void ejecutarPelea(Boxeador boxeador1, Boxeador boxeador2) {
         int round = 1;
         final int MAX_ROUNDS = 12;
         
-        System.out.println("INICIO DE LA PELEA");
+        System.out.println("INICIO DEL COMBATE");
         System.out.println(SEPARADOR);
         
         //bucle de la pelea (hasta 12 rounds o K.O)
@@ -327,7 +328,7 @@ public class SimuladorBoxeo {
     // Método para simular cada round
     static void simularRound(Boxeador boxeador1, Boxeador boxeador2, int round) {
 
-        // cálculos de combate
+        // cálculos de ataque previos
         int ataque1 = boxeador1.calcularDano();
         int ataque2 = boxeador2.calcularDano();
         
