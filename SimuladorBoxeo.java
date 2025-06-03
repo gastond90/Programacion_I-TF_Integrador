@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 // Clase Boxeador
+// Algunos atributos los define el usuario al momento de crear un boxeador,
+// el resto se calculan a partir de éstos.
 class Boxeador {
     protected String nombre;
     protected double peso;
@@ -30,15 +32,17 @@ class Boxeador {
         this.puntos = 0;
     }
     
+    //Funciones para las simulaciones de las peleas
+    //
     //Calcular el daño de cada ataque
     public int calcularDano() {
         Random rand = new Random();
         int danoBase = (fuerza + experiencia) / 2;
         int variacion = rand.nextInt(10) - 5; // variación del daño para darle un componente aleatorio
-        return Math.max(1, danoBase + variacion);
+        return Math.max(1, danoBase + variacion);//me aseguro que sea > 0
     }
     
-    //Calcular la defensa
+    //Calcular la defensa ante cada ataque
     public int calcularDefensa() {
         Random rand = new Random();
         int defensaBase = (velocidad + resistencia) / 3;
@@ -54,7 +58,7 @@ class Boxeador {
         if (this.vida < 0) this.vida = 0;
     }
     
-    //Puntaje del round
+    //Sumar el puntaje del round
     public void ganarPuntos(int puntos) {
         this.puntos += puntos;
     }
@@ -77,12 +81,13 @@ class Boxeador {
     }
     
     //Verificar si está KO
-    public boolean estaNoqueado() {
-        return vida <= 0;
-    }
+    public boolean estaNoqueado() { return vida <= 0;}
 }
 
 // Clases que heredan de Boxeador
+// Según el peso, se determina la categoría a la que pertenece el boxeador.
+// Las categorías heredan de la clase Boxeador y tienen algunos atributos
+// característicos de cada una.
 
 class BoxeadorPesoPesado extends Boxeador {
     public BoxeadorPesoPesado(String nombre, double peso, double altura, int anosEntrenamiento,
@@ -102,7 +107,7 @@ class BoxeadorPesoPesado extends Boxeador {
         System.out.println("\n=== BOXEADOR PESO PESADO ===");
         System.out.println(" ");
         super.mostrarInfo();
-        System.out.println("Bonus: +5 Fuerza, -2 Velocidad, +3 Resistencia");
+        System.out.println("\nBonus: +5 Fuerza, -2 Velocidad, +3 Resistencia");
     }
 }
 
@@ -130,7 +135,12 @@ class BoxeadorPesoPluma extends Boxeador {
 
 
 
-// Clase principal
+// Función principal
+//
+// -Muestro la pantalla de bienvenida, la presentación del proyecto y el menú principal del programa.
+// -Tengo la creación de boxeadores y el simulador de la pelea round a round.
+// -Obtengo el listado de boxeadores creados por los usuarios
+//
 public class SimuladorBoxeo {
     private static final Scanner scanner = new Scanner(System.in);
     private static final  Boxeador[] historialBoxeadores = new Boxeador[20]; // array de boxeadores
@@ -224,7 +234,7 @@ public class SimuladorBoxeo {
         }
         
         // información antes de la pelea
-        System.out.println("CONTENDIENTES");
+        System.out.println("\nCONTENDIENTES");
         System.out.println(SEPARADOR);
         boxeador1.mostrarInfo();
         System.out.println(" ");
@@ -293,7 +303,7 @@ public class SimuladorBoxeo {
     //Ejecutar la pelea
     static void ejecutarPelea(Boxeador boxeador1, Boxeador boxeador2) {
         int round = 1;
-        final int MAX_ROUNDS = 12;
+        final int MAX_ROUNDS = 12; //Duración máxima del combate
         
         System.out.println("INICIO DEL COMBATE");
         System.out.println(SEPARADOR);
@@ -303,18 +313,20 @@ public class SimuladorBoxeo {
             System.out.println("ROUND " + round + " ");
             System.out.println(SEPARADOR);
             
-            // ataques del round
+            //En cada round hago:
+            //
+            // -simular ataques del round
             simularRound(boxeador1, boxeador2, round);
             
-            //estado después del round
+            // -mostrar estado después del round
             mostrarEstadoRound(boxeador1, boxeador2, round);
             
-            // verificar K.O
+            // -verificar K.O
             if (boxeador1.estaNoqueado() || boxeador2.estaNoqueado()) {
                 break;
             }
             
-            round++;
+            round++; //avanzo al siguiente round
             
             //pausa entre round y round
             System.out.println("Presione ENTER para continuar");
@@ -371,7 +383,9 @@ public class SimuladorBoxeo {
         }
     }
     
-    // mostrar estado después de cada round
+    //Función mostrar el estado después de cada round.
+    //Muestra cuanta vida les queda y cuantos puntos van acumulando
+    //Muestra si alguno de los boxeadores quedó fuera de combate
     static void mostrarEstadoRound(Boxeador boxeador1, Boxeador boxeador2, int round) {
     System.out.println("\nESTADO DESPUES DEL ROUND " + round + ":");
     System.out.println("-------------------------------------------------------");
@@ -390,7 +404,8 @@ public class SimuladorBoxeo {
     }
 
     
-    // determinar el ganador
+    // Función para determinar el ganador
+    // Basado en si alguno quedó sin vida o por diferencia de puntos si se complearon los 12 rounds
     static void determinarGanador(Boxeador boxeador1, Boxeador boxeador2, boolean porPuntos) {
         System.out.println("FIN DEL COMBATE");
         System.out.println(SEPARADOR);
@@ -420,7 +435,8 @@ public class SimuladorBoxeo {
         System.out.println(SEPARADOR);
     }
     
-    // mostrar lista de boxeadores creados
+    // Función para mostrar lista de boxeadores creados
+    // Recorro el array y voy mostrando en consola cada uno
     public static void mostrarRegistro() {
         System.out.println("REGISTRO DE BOXEADORES");
         System.out.println(SEPARADOR);
