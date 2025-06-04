@@ -1,7 +1,9 @@
-// Apellido y Nombre: DUBA GASTÓN, Carrera: LIC. EN CS. DE DATOS, Año: 2025
+// Apellido y Nombre: DUBA GASTÓN, Carrera: LIC. EN CIENCIAS DE DATOS, Año: 2025
 
 import java.util.Random;
 import java.util.Scanner;
+
+
 
 // Clase Boxeador
 // Algunos atributos los define el usuario al momento de crear un boxeador,
@@ -32,7 +34,24 @@ class Boxeador {
         this.puntos = 0;
     }
     
-    //Funciones para las simulaciones de las peleas
+    // Getters y setters
+    public String getNombre() { return nombre; }
+    public int getVida() { return vida; }
+    public int getVidaMaxima() { return vidaMaxima; }
+    public int getPuntos() { return puntos; }
+    public double getPeso() { return peso; }
+    
+    //Información del boxeador
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Peso: " + peso + " kg");
+        System.out.println("Altura: " + altura + " cm");
+        System.out.println("Experiencia: " + experiencia + " años");
+        System.out.println("Fuerza: " + fuerza + " | Velocidad: " + velocidad + " | Resistencia: " + resistencia);
+        System.out.println("Vida: " + vida + "/" + vidaMaxima);
+    }
+
+    //Funciones del boxeador para las simulaciones de las peleas
     //
     //Calcular el daño de cada ataque
     public int calcularDano() {
@@ -53,7 +72,7 @@ class Boxeador {
     //Calcular daño recibido
     public void recibirDano(int dano) {
         int defensa = calcularDefensa();
-        int danoReal = Math.max(1, dano - defensa);
+        int danoReal = Math.max(1, dano - defensa); 
         this.vida -= danoReal;
         if (this.vida < 0) this.vida = 0;
     }
@@ -61,23 +80,6 @@ class Boxeador {
     //Sumar el puntaje del round
     public void ganarPuntos(int puntos) {
         this.puntos += puntos;
-    }
-    
-    // Getters y setters
-    public String getNombre() { return nombre; }
-    public int getVida() { return vida; }
-    public int getVidaMaxima() { return vidaMaxima; }
-    public int getPuntos() { return puntos; }
-    public double getPeso() { return peso; }
-    
-    //Información del boxeador
-    public void mostrarInfo() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Peso: " + peso + " kg");
-        System.out.println("Altura: " + altura + " cm");
-        System.out.println("Experiencia: " + experiencia + " años");
-        System.out.println("Fuerza: " + fuerza + " | Velocidad: " + velocidad + " | Resistencia: " + resistencia);
-        System.out.println("Vida: " + vida + "/" + vidaMaxima);
     }
     
     //Verificar si está KO
@@ -133,8 +135,6 @@ class BoxeadorPesoPluma extends Boxeador {
     }
 }
 
-
-
 // Función principal
 //
 // -Muestro la pantalla de bienvenida, la presentación del proyecto y el menú principal del programa.
@@ -178,20 +178,20 @@ public class SimuladorBoxeo {
     
     //Pantalla de bienvenida
     public static void mostrarBienvenida() {
-        System.out.println("=====================================================");
-        System.out.println("           SIMULADOR DE BOXEO           ");
-        System.out.println("=====================================================");
+       System.out.println(SEPARADOR);
+        System.out.println("           SIMULADOR DE BOXEO           "  );
+       System.out.println(SEPARADOR);
         System.out.println("Gaston Duba");
         System.out.println("Licenciatura en Cs. de Datos - UCASAL");
         System.out.println("Programacion I - Examen Final Integrador");
         System.out.println("2025");
-        System.out.println("=====================================================");
+       System.out.println(SEPARADOR);
         System.out.println();
     }
     
     //Resumen del proyecto
     public static void mostrarDescripcionProyecto() {
-        System.out.println("RESUMEN DEL PROYECTO:");
+        System.out.println( "RESUMEN DEL PROYECTO:");
         System.out.println("Este simulador permite crear boxeadores con diferentes atributos y simular combates");
         System.out.println("El sistema calcula el ataque, la defensa y determina el ganador por K.O o puntos.");
         System.out.println();
@@ -271,7 +271,6 @@ public class SimuladorBoxeo {
         
         System.out.print("Ingrese resistencia (1-20): ");
         int resistencia = validarRango(1, 20);
-        
         scanner.nextLine();
 
         //Calculo la categoría de del boxeador creado
@@ -317,15 +316,13 @@ public class SimuladorBoxeo {
             //
             // -simular ataques del round
             simularRound(boxeador1, boxeador2, round);
+
             
             // -mostrar estado después del round
             mostrarEstadoRound(boxeador1, boxeador2, round);
             
             // -verificar K.O
-            if (boxeador1.estaNoqueado() || boxeador2.estaNoqueado()) {
-                break;
-            }
-            
+            if (boxeador1.estaNoqueado() || boxeador2.estaNoqueado()) {break;}
             round++; //avanzo al siguiente round
             
             //pausa entre round y round
