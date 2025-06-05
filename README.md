@@ -1,7 +1,7 @@
 ![Logo](https://www.brincar.org.ar/wp-content/uploads/2017/12/ucasal_c.png)
-<!-- ![Banner](https://gamefabrique.com/storage/screenshots/genesis/evander-holyfields-real-deal-boxing-05.png) -->
-![Banner](https://static1.thegamerimages.com/wordpress/wp-content/uploads/2019/11/Greatest-Heavyweights.jpg?q=50&fit=crop&w=525&dpr=1.5)
-<!-- ![Banner](https://www.letsplaysega.com/wp-content/uploads/images/gen/Evander_Holyfields_Real_Deal_Boxing.png) -->
+<!-- ![Banner](https://static1.thegamerimages.com/wordpress/wp-content/uploads/2019/11/Greatest-Heavyweights.jpg?q=50&fit=crop&w=525&dpr=1.5) -->
+![Banner](banner_2.jpg)
+
 
 ## 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
