@@ -1,3 +1,6 @@
+![Logo](https://www.ucasal.edu.ar/wp-content/uploads/2022/07/logo-ucasal.png)
+![Logo](https://www.giantbomb.com/a/uploads/original/2/23093/3612071-greatestheavyweights%28usa%29-240812-200919.png)
+
 # 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
 **Autor**: Gastón Duba  
