@@ -1,7 +1,5 @@
 ![Banner](./img/banner.jpg)
 ![Banner2](./img/banner_2.jpg)
-![Banner3](./img/banner_3.jpg)
-
 
 ## 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
