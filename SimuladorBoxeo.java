@@ -273,7 +273,7 @@ public class SimuladorBoxeo {
         if (peso > 90) {
         System.out.println("\nBoxeador clase PESO PESADO");
         return new BoxeadorPesoPesado(nombre, peso, altura, fuerza, velocidad, resistencia);
-        } else if (peso < 60) {
+        } else if (peso < 70) {
             System.out.println("\nBoxeador clase PESO PLUMA");
             return new BoxeadorPesoPluma(nombre, peso, altura, fuerza, velocidad, resistencia);
         } else {
@@ -310,7 +310,7 @@ public class SimuladorBoxeo {
     //Ejecutar la pelea
     static void ejecutarPelea(Boxeador boxeador1, Boxeador boxeador2) {
         int round = 1;
-        final int MAX_ROUNDS = 2; //Duración máxima del combate
+        final int MAX_ROUNDS = 12; //Duración máxima del combate
         
         System.out.println("INICIO DEL COMBATE");
         System.out.println(SEPARADOR);

@@ -17,8 +17,8 @@ Programa en Java que simula peleas de boxeo entre dos contrincantes. Cada boxead
 ## Tecnologías  
 - Java
 
-## Cómo ejecutarlo  
-1. Clonar el repositorio o descargar el archivo `.java`.  
+## Como ejecutarlo  
+1. Clonar el repositorio o descargar el archivo `.java`
 2. Compilar y ejecutar desde la terminal:  
    javac SimuladorBoxeo.java  
    java SimuladorBoxeo
