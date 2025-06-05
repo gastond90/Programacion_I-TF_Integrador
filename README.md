@@ -1,5 +1,6 @@
 ![Logo](https://www.brincar.org.ar/wp-content/uploads/2017/12/ucasal_c.png)
-![Banner](https://gamefabrique.com/storage/screenshots/genesis/evander-holyfields-real-deal-boxing-05.png)
+<!-- ![Banner](https://gamefabrique.com/storage/screenshots/genesis/evander-holyfields-real-deal-boxing-05.png) -->
+![Banner](https://www.letsplaysega.com/wp-content/uploads/images/gen/Evander_Holyfields_Real_Deal_Boxing.png)
 
 ## 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
