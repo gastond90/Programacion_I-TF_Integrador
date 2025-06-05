@@ -1,5 +1,5 @@
-![Logo](https://www.ucasal.edu.ar/wp-content/uploads/2022/07/logo-ucasal.png)
-![Logo](https://www.giantbomb.com/a/uploads/original/2/23093/3612071-greatestheavyweights%28usa%29-240812-200919.png)
+![Logo](https://www.brincar.org.ar/wp-content/uploads/2017/12/ucasal_c.png)
+![Banner](https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/oie_2711436xg0x2qvr.jpg?q=50&fit=crop&w=825&dpr=1.5)
 
 # 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
