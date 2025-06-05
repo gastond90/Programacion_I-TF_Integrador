@@ -41,8 +41,7 @@ class Boxeador {
     //Información del boxeador
     public void mostrarInfo() {
         System.out.println("Nombre: " + nombre);
-        System.out.println("Peso: " + peso + " kg");
-        System.out.println("Altura: " + altura + " cm");
+        System.out.println("Peso: " + peso + " kg" + " | Altura: " + altura + " cm" );
         System.out.println("Fuerza: " + fuerza + " | Velocidad: " + velocidad + " | Resistencia: " + resistencia);
         System.out.println("Vida: " + vida + "/" + vidaMaxima);
     }

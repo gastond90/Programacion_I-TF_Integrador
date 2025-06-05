@@ -1,7 +1,6 @@
-<!-- ![Logo](https://www.brincar.org.ar/wp-content/uploads/2017/12/ucasal_c.png) -->
-<!-- ![Banner](https://static1.thegamerimages.com/wordpress/wp-content/uploads/2019/11/Greatest-Heavyweights.jpg?q=50&fit=crop&w=525&dpr=1.5) -->
-![Banner](banner.jpg)
-![Banner](banner_2.jpg)
+![Banner](./img/banner.jpg)
+![Banner2](./img/banner_2.jpg)
+![Banner3](./img/banner_3.jpg)
 
 
 ## 🥊 Simulador de Boxeo - Examen Final de Programación I  
