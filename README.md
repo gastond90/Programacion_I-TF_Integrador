@@ -1,7 +1,7 @@
 ![Logo](https://www.brincar.org.ar/wp-content/uploads/2017/12/ucasal_c.png)
 ![Banner](https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/oie_2711436xg0x2qvr.jpg?q=50&fit=crop&w=825&dpr=1.5)
 
-# 🥊 Simulador de Boxeo - Examen Final de Programación I  
+## 🥊 Simulador de Boxeo - Examen Final de Programación I  
 
 **Autor**: Gastón Duba  
 **Carrera**: Licenciatura en Ciencias de Datos  
@@ -19,6 +19,6 @@ Programa en Java que simula peleas de boxeo entre dos contrincantes. Cada boxead
 
 ## Cómo ejecutarlo  
 1. Clonar el repositorio o descargar el archivo `.java`.  
-2. Compilar y ejecutar desde la terminal:
-   javac SimuladorBoxeo.java
+2. Compilar y ejecutar desde la terminal:  
+   javac SimuladorBoxeo.java  
    java SimuladorBoxeo
