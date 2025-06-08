@@ -22,3 +22,5 @@ Programa en Java que simula peleas de boxeo entre dos contrincantes. Cada boxead
 2. Compilar y ejecutar desde la terminal:  
    javac SimuladorBoxeo.java  
    java SimuladorBoxeo
+
+![Visitas](https://visitor-badge.glitch.me/badge?page_id=gastond90.Programacion_I-TF_Integrador)
