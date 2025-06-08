@@ -23,5 +23,3 @@ Programa en Java que simula peleas de boxeo entre dos contrincantes. Cada boxead
    javac SimuladorBoxeo.java  
    java SimuladorBoxeo
 
-![Visitas](https://visitor-badge.glitch.me/badge?page_id=gastond90.Programacion-I-TF-Integrador)
-
